@@ -270,7 +270,7 @@ CPLUGINS_API NEVER_NULL(1) bool plugin_dir_open(const char dir[], PluginDirEvent
 	/// 'FILENAME_MAX' defined in <stdio.h>
 	char currdir[FILENAME_MAX] = {0};
 #ifdef OS_WINDOWS
-	if( GetCurrentDir(sizeof currdir, currdir) != 0 )
+	if( GetCurrentDirectory(sizeof currdir, currdir) != 0 )
 #else
 	if( getcwd(currdir, sizeof currdir) != NULL )
 #endif
